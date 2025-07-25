@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Trabajo Estratégico | Jeisson Carrero | Maxialimentos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F5F8F3; /* Light background inspired by logo */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-arrow {
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #669933; /* Primary Green */
+        }
+        .day-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Slightly more rounded */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Stronger shadow */
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+        }
+        .day-card:hover {
+            transform: translateY(-5px);
+        }
+        .day-heading {
+            font-weight: 700;
+            font-size: 1.5rem; /* Larger heading */
+            margin-bottom: 1rem;
+            color: #385C1D; /* Darker green for emphasis */
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.5rem; /* Larger section titles */
+            font-weight: 900; /* Extra bold */
+            color: #385C1D;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: #4D7A26;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .icon-large {
+            font-size: 4rem; /* Larger icons */
+            color: #669933;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 
+        COLOR PALETTE USED: Maxialimentos Brand Colors (derived from logo)
+        Primary Green: #669933
+        Secondary Green: #4D7A26
+        Accent/Darker Green: #385C1D
+        Light Background: #F5F8F3
+        Text: #333333
+
+        CONFIRMATION: NEITHER MERMAID JS NOR SVG GRAPHICS WERE USED IN THIS DOCUMENT.
+        ALL VISUALIZATIONS ARE RENDERED USING CHART.JS/CANVAS OR STRUCTURED HTML/CSS WITH TAILWIND.
+    -->
+
+    <!-- SECTION 1: HEADER -->
+    <header class="bg-gradient-to-r from-[#669933] to-[#4D7A26] shadow-xl">
+        <div class="container mx-auto px-6 py-16 text-center text-white">
+            <img src="uploaded:image_0e53de.png-81b1f012-0b3a-4430-9df8-191d99dd8e69" alt="Maxialimentos Logo" class="h-24 md:h-32 object-contain mx-auto mb-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Plan de Trabajo Estratégico</h1>
+            <p class="mt-4 text-2xl md:text-3xl font-light">Integración de Roles: Técnico de Sistemas y Desarrollador Odoo</p>
+            <p class="mt-6 text-xl">Presentado por: Jeisson Esteban Carrero Cedeño</p>
+            <p class="text-sm opacity-80">Fecha: 25 de Julio de 2025</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- SECTION 2: VISION & PRINCIPLES -->
+        <section id="vision" class="mb-24">
+            <h2 class="section-title">Una Visión Unificada para la Mejora Continua en Maxialimentos</h2>
+            <p class="max-w-4xl mx-auto text-center text-xl mb-16 leading-relaxed">
+                Mi propuesta integra activamente la gestión de sistemas con el desarrollo Odoo para crear un ciclo virtuoso de eficiencia. Mi conocimiento profundo de la infraestructura me permite identificar oportunidades de automatización, traduciéndolas en soluciones robustas que impulsarán la productividad de Maxialimentos.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="icon-large mb-3">🎯</div>
+                    <h3 class="font-bold text-2xl mb-3 text-[#4D7A26]">Enfoque Estratégico</h3>
+                    <p class="text-base text-gray-700">Mi tiempo se dividirá estratégicamente entre el desarrollo de Odoo y la gestión de sistemas.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="icon-large mb-3">⚡</div>
+                    <h3 class="font-bold text-2xl mb-3 text-[#4D7A26]">Soporte Ágil</h3>
+                    <p class="text-base text-gray-700">Atención inmediata a incidencias de sistemas. La mayoría se solucionan de forma puntual, permitiendo un rápido retorno al desarrollo.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="icon-large mb-3">🤝</div>
+                    <h3 class="font-bold text-2xl mb-3 text-[#4D7A26]">Delegación Estratégica</h3>
+                    <p class="text-base text-gray-700">El aprendiz SENA apoyará en pruebas y verificaciones, liberando mi tiempo para el desarrollo principal y la resolución de soportes.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="icon-large mb-3">🛡️</div>
+                    <h3 class="font-bold text-2xl mb-3 text-[#4D7A26]">Mantenimiento Proactivo</h3>
+                    <p class="text-base text-gray-700">El cronograma de mantenimiento está en un 50% de avance, lo que reduce significativamente la aparición de fallas. Las incidencias restantes se resuelven de inmediato.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: DETAILED WEEKLY PLAN -->
+        <section id="plan-detallado" class="mb-24 bg-white p-12 rounded-xl shadow-xl">
+            <h2 class="section-title">El Ritmo de la Doble Función: Un Día a Día Estratégico</h2>
+            <p class="max-w-4xl mx-auto text-center text-lg mb-12">
+                Este desglose ilustra cómo se equilibra el desarrollo Odoo con el soporte de sistemas. El enfoque principal es el desarrollo, con interrupciones ágiles para resolver incidencias de soporte, permitiendo un rápido retorno a las tareas de programación.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                <!-- Lunes -->
+                <div class="day-card">
+                    <h3 class="day-heading">Lunes: Sincronización y Objetivos Semanales</h3>
+                    <p class="text-gray-600 mb-4">El inicio de la semana es crucial para establecer la dirección y delegar eficientemente. Mi prioridad es el desarrollo, con flexibilidad para el soporte inmediato.</p>
+                    <ul class="list-disc list-inside text-sm space-y-2">
+                        <li><span class="font-bold">Actividades Clave:</span>
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Revisión y definición de <span class="font-bold">objetivos semanales</span> (Odoo y Sistemas).</li>
+                                <li>Reunión con aprendiz: asignación de tareas Odoo (desarrollo menor, pruebas, documentación).</li>
+                                <li>Análisis de requerimientos y diseño de soluciones Odoo.</li>
+                                <li>Atención a incidencias de sistemas según surjan, con retorno inmediato al desarrollo.</li>
+                                <li>Ejecución de mantenimientos preventivos programados (según calendario).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Martes -->
+                <div class="day-card">
+                    <h3 class="day-heading">Martes: Desarrollo Odoo Profundo y Mantenimiento de Hardware</h3>
+                    <p class="text-gray-600 mb-4">Día clave para el avance en funcionalidades complejas de Odoo y el cuidado de la base tecnológica.</p>
+                    <ul class="list-disc list-inside text-sm space-y-2">
+                        <li><span class="font-bold">Actividades Clave:</span>
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Desarrollo de funcionalidades complejas en Odoo.</li>
+                                <li>Revisión de código con aprendiz, feedback y mentoría.</li>
+                                <li>Atención a incidencias de sistemas según surjan, con retorno inmediato al desarrollo.</li>
+                                <li>Mantenimiento preventivo de equipos de cómputo (actualizaciones, limpieza, verificación de rendimiento).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Miércoles -->
+                <div class="day-card">
+                    <h3 class="day-heading">Miércoles: Odoo (Pruebas/Despliegues) y Redes/CCTV</h3>
+                    <p class="text-gray-600 mb-4">Enfocados en la calidad del software y la vigilancia de la infraestructura de comunicación.</p>
+                    <ul class="list-disc list-inside text-sm space-y-2">
+                        <li><span class="font-bold">Actividades Clave:</span>
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Pruebas de integración, resolución de bugs en Odoo.</li>
+                                <li>Preparación y coordinación para despliegues de nuevas versiones.</li>
+                                <li>Atención a incidencias de sistemas según surjan, con retorno inmediato al desarrollo.</li>
+                                <li>Mantenimiento y auditoría de redes y CCTV (conectividad, grabación, seguridad).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Jueves -->
+                <div class="day-card">
+                    <h3 class="day-heading">Jueves: Odoo (Optimización/Planificación)</h3>
+                    <p class="text-gray-600 mb-4">Día para la mejora continua en Odoo y la gestión eficiente de nuestros activos digitales.</p>
+                    <ul class="list-disc list-inside text-sm space-y-2">
+                        <li><span class="font-bold">Actividades Clave:</span>
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Optimización de rendimiento de módulos Odoo existentes.</li>
+                                <li>Planificación de futuras funcionalidades y mejoras.</li>
+                                <li>Atención a incidencias de sistemas según surjan, con retorno inmediato al desarrollo.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Viernes -->
+                <div class="day-card">
+                    <h3 class="day-heading">Viernes: Cierre Semanal, Verificación y Planificación Futura</h3>
+                    <p class="text-gray-600 mb-4">Consolidación de logros y preparación estratégica para la siguiente semana.</p>
+                    <ul class="list-disc list-inside text-sm space-y-2">
+                        <li><span class="font-bold">Actividades Clave:</span>
+                            <ul class="list-circle list-inside ml-4">
+                                <li>Finalización de tareas de desarrollo de la semana.</li>
+                                <li>Resolución de bugs críticos pendientes en Odoo.</li>
+                                <li>Atención a incidencias de sistemas según surjan, con retorno inmediato al desarrollo.</li>
+                                <li><span class="font-bold">Revisión de cumplimiento de objetivos semanales (Odoo y Sistemas).</span></li>
+                                <li>Planificación de objetivos y tareas para la próxima semana.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sábado -->
+                <div class="day-card lg:col-span-1 xl:col-span-1">
+                    <h3 class="day-heading">Sábado: Proyectos Estratégicos y Mantenimiento Profundo</h3>
+                    <p class="text-gray-600 mb-4">Tiempo dedicado a tareas de alto impacto que requieren concentración exclusiva y no interrumpen la operación semanal.</p>
+                    <ul class="list-disc list-inside text-sm space-y-2">
+                        <li>Completar desarrollos Odoo críticos y complejos (ej. módulos de integración con la línea de producción).</li>
+                        <li>Ejecutar mantenimientos mayores de equipos y sistemas (ej. actualizaciones de firmware en equipos de red críticos, revisiones profundas de servidores, pruebas de recuperación de desastres).</li>
+                        <li>Realizar revisiones exhaustivas de objetivos semanales pendientes para asegurar el progreso.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SYNERGY FLOWCHART -->
+        <section id="sinergia" class="mb-24 bg-gradient-to-r from-[#F5F8F3] to-white p-12 rounded-xl shadow-xl">
+            <h2 class="section-title">El Poder de la Sinergia: De Problema a Proceso Automatizado en Maxialimentos</h2>
+            <p class="max-w-4xl mx-auto text-center text-xl mb-12 leading-relaxed">
+                Mi doble rol permite una identificación única de ineficiencias operativas en Maxialimentos y su transformación directa en soluciones automatizadas con Odoo, generando un impacto tangible en la eficiencia.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md w-full md:w-1/4 flex flex-col items-center justify-center h-48">
+                    <div class="text-5xl mb-3 text-[#669933]">🔍</div>
+                    <h4 class="font-bold text-lg text-[#4D7A26]">1. Identificación</h4>
+                    <p class="text-sm mt-2">Como <span class="font-bold">Técnico de Sistemas</span>, detecto un proceso manual ineficiente (ej. registro de materia prima).</p>
+                </div>
+                <div class="flowchart-arrow transform md:-rotate-0">➡️</div>
+                <div class="bg-white p-6 rounded-lg shadow-md w-full md:w-1/4 flex flex-col items-center justify-center h-48">
+                    <div class="text-5xl mb-3 text-[#669933]">💡</div>
+                    <h4 class="font-bold text-lg text-[#4D7A26]">2. Diseño de Solución</h4>
+                    <p class="text-sm mt-2">Con visión de <span class="font-bold">Mejora Continua</span>, diseño la automatización en Odoo (ej. integración con lectores de códigos).</p>
+                </div>
+                <div class="flowchart-arrow transform md:-rotate-0">➡️</div>
+                <div class="bg-white p-6 rounded-lg shadow-md w-full md:w-1/4 flex flex-col items-center justify-center h-48">
+                    <div class="text-5xl mb-3 text-[#669933]">⚙️</div>
+                    <h4 class="font-bold text-lg text-[#4D7A26]">3. Desarrollo</h4>
+                    <p class="text-sm mt-2">Como <span class="font-bold">Desarrollador Odoo</span>, implemento la funcionalidad, asegurando su integración y correcto funcionamiento.</p>
+                </div>
+                 <div class="flowchart-arrow transform md:-rotate-0">➡️</div>
+                <div class="bg-[#385C1D] text-white p-6 rounded-lg shadow-lg w-full md:w-1/4 flex flex-col items-center justify-center h-48">
+                    <div class="text-5xl mb-3">🚀</div>
+                    <h4 class="font-bold text-lg">4. Resultado</h4>
+                    <p class="text-sm mt-2">Proceso <span class="font-bold">automatizado</span>: inventario en tiempo real, reducción de errores y agilización operativa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: KPIs -->
+        <section id="kpis" class="mb-24">
+            <h2 class="section-title">Midiendo el Éxito: Indicadores Clave de Rendimiento</h2>
+            <p class="max-w-4xl mx-auto text-center text-lg mb-12">
+                El progreso será monitoreado a través de métricas claras, asegurando la transparencia y el impacto positivo en Maxialimentos.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl mb-4 text-center text-[#4D7A26]">Desarrollo Odoo</h3>
+                    <div class="chart-container">
+                        <canvas id="odooKpiChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-sm text-gray-600">Foco en la entrega de funcionalidades clave y la automatización de procesos internos de Maxialimentos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl mb-4 text-center text-[#4D7A26]">Soporte y Sistemas</h3>
+                    <div class="chart-container">
+                        <canvas id="systemsKpiChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-sm text-gray-600">Garantizar la máxima disponibilidad de la infraestructura y el cumplimiento de mantenimientos preventivos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: RISKS & MITIGATION -->
+        <section id="riesgos" class="mb-24 bg-[#E6F0E0] p-12 rounded-xl shadow-xl">
+            <h2 class="section-title">Gestión Proactiva de Riesgos</h2>
+            <p class="max-w-4xl mx-auto text-center text-lg mb-12">
+                Anticipar y mitigar posibles desafíos es clave para el éxito de esta integración de roles.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl mb-3 text-[#4D7A26]">Sobrecarga de Trabajo</h3>
+                    <p class="text-sm text-gray-700"><span class="font-bold">Riesgo:</span> Alto volumen de incidencias críticas inesperadas en sistemas.</p>
+                    <p class="text-sm text-gray-700 mt-2"><span class="font-bold">Mitigación:</span> Comunicación proactiva con gerencia para reajuste temporal de prioridades. Uso de sistema de ticketing para priorización y escalamiento, enfocándose en la naturaleza de solución rápida de la mayoría de los soportes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl mb-3 text-[#4D7A26]">Curva de Aprendizaje del Aprendiz</h3>
+                    <p class="text-sm text-gray-700"><span class="font-bold">Riesgo:</span> Ritmo de aprendizaje del aprendiz más lento de lo esperado en Odoo.</p>
+                    <p class="text-sm text-gray-700 mt-2"><span class="font-bold">Mitigación:</span> Ajuste gradual de tareas asignadas. Implementación de sesiones de capacitación intensivas y focalizadas. Revisión constante y feedback constructivo.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl mb-3 text-[#4D7A26]">Expectativas vs. Capacidad</h3>
+                    <p class="text-sm text-gray-700"><span class="font-bold">Riesgo:</span> Desfase entre las expectativas de desarrollo Odoo y la capacidad real.</p>
+                    <p class="text-sm text-gray-700 mt-2"><span class="font-bold">Mitigación:</span> Establecimiento de objetivos semanales realistas y negociados. Reportes de progreso transparentes a gerencia, permitiendo ajustes oportunos en la planificación.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: COMMUNICATION & REQUIREMENTS -->
+        <section id="comunicacion" class="mb-24">
+            <h2 class="section-title">Comunicación y Requerimientos Clave</h2>
+            <p class="max-w-4xl mx-auto text-center text-lg mb-12">
+                Una comunicación fluida y las herramientas adecuadas son esenciales para el éxito de este plan.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl mb-4 text-[#4D7A26]">Estrategia de Comunicación y Reporte</h3>
+                    <ul class="list-disc list-inside text-sm space-y-2 text-gray-700">
+                        <li><span class="font-bold">Reunión Diaria con Aprendiz:</span> Breves sincronizaciones matutinas.</li>
+                        <li><span class="font-bold">Reporte Semanal Interno:</span> Resumen de avances y objetivos (Viernes).</li>
+                        <li><span class="font-bold">Reporte Mensual a Gerencia:</span> Informe ejecutivo con KPIs, logros y desafíos.</li>
+                        <li><span class="font-bold">Reuniones de Seguimiento Gerencial:</span> Según necesidad para decisiones estratégicas.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl mb-4 text-[#4D7A26]">Requerimientos Adicionales y Herramientas</h3>
+                    <ul class="list-disc list-inside text-sm space-y-2 text-gray-700">
+                        <li><span class="font-bold">Confianza y Apoyo Gerencial:</span> Validar la estructura flexible y la adaptabilidad.</li>
+                        <li><span class="font-bold">Herramientas de Gestión Eficientes:</span> Sistema de ticketing, control de versiones (Git), plataforma de gestión de proyectos (Trello/Asana).</li>
+                        <li><span class="font-bold">Comunicación Abierta:</span> Canales claros y efectivos con todo el equipo de Maxialimentos.</li>
+                        <li><span class="font-bold">Formación Continua y Recursos:</span> Espacio y recursos para actualización en Odoo y nuevas tecnologías.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: LONG-TERM VISION -->
+        <section id="vision-largo-plazo" class="mb-24 bg-gradient-to-r from-[#669933] to-[#4D7A26] p-12 rounded-xl shadow-xl text-white">
+            <h2 class="section-title text-white">Visión a Mediano y Largo Plazo para Maxialimentos</h2>
+            <p class="max-w-4xl mx-auto text-center text-xl mb-12 leading-relaxed">
+                Esta integración de roles no solo optimiza las operaciones actuales, sino que sienta las bases para una evolución tecnológica sólida y una ventaja competitiva duradera para Maxialimentos.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="icon-large text-white mb-3">⭐</div>
+                    <h3 class="font-bold text-xl mb-2">Consolidación Odoo</h3>
+                    <p class="text-base opacity-90">Odoo como ERP central, adaptado a necesidades específicas de producción, inventario, ventas, calidad, <span class="font-bold">talento humano, nómina y contabilidad</span>.</p>
+                </div>
+                <div class="text-center">
+                    <div class="icon-large text-white mb-3">🚀</div>
+                    <h3 class="font-bold text-xl mb-2">Infraestructura Proactiva</h3>
+                    <p class="text-base opacity-90">Gestión de sistemas predictiva, minimizando interrupciones y garantizando escalabilidad.</p>
+                </div>
+                <div class="text-center">
+                    <div class="icon-large text-white mb-3">🎓</div>
+                    <h3 class="font-bold text-xl mb-2">Desarrollo de Conocimiento</h3>
+                    <p class="text-base opacity-90">Mi continuo aprendizaje en Odoo y sistemas unificará el conocimiento para impulsar la automatización y eficiencia.</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- SECTION 9: FINAL FOOTER -->
+    <footer class="bg-white shadow-lg py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-[#385C1D]">Un Valor Único para Maxialimentos</h2>
+            <p class="max-w-4xl mx-auto text-xl mb-8 leading-relaxed">
+                Este plan demuestra mi capacidad y compromiso para manejar ambas responsabilidades de manera efectiva. Estoy plenamente convencido de que esta integración no solo optimizará nuestras operaciones, sino que impulsará a Maxialimentos hacia un futuro más eficiente, automatizado y competitivo.
+            </p>
+            <p class="font-bold text-xl text-[#4D7A26]">Agradezco su tiempo y consideración, y estoy a su disposición para cualquier aclaración o ajuste necesario.</p>
+            <p class="mt-6 text-lg text-gray-700">Atentamente,</p>
+            <p class="text-2xl font-bold text-[#385C1D]">Jeisson Esteban Carrero Cedeño</p>
+        </div>
+    </footer>
+
+    <script>
+        // UTILITY FOR LABEL WRAPPING
+        function wrapLabels(label, maxWidth) {
+            if (typeof label !== 'string' || label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        // COMMON CHART OPTIONS
+        const commonOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        // Maxialimentos Green Palette
+        const palette = {
+            green1: '#669933', /* Primary Green */
+            green2: '#4D7A26', /* Secondary Green */
+            green3: '#385C1D', /* Accent/Darker Green */
+            lightBg: '#F5F8F3', /* Light background inspired by logo */
+            textDark: '#333333' /* Dark text for readability */
+        };
+
+        // KPI Chart 1: Odoo Development
+        const odooKpiCtx = document.getElementById('odooKpiChart').getContext('2d');
+        const odooKpiChart = new Chart(odooKpiCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Funcionalidades Clave Entregadas (Trimestral)', 'Procesos Automatizados (Acumulativo)'].map(l => wrapLabels(l, 16)),
+                datasets: [{
+                    label: 'Objetivo',
+                    data: [3, 5],
+                    backgroundColor: palette.green2,
+                    borderColor: palette.green3,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                },
+                plugins: { ...commonOptions.plugins, legend: { display: false } }
+            }
+        });
+
+        // KPI Chart 2: Systems & Support
+        const systemsKpiCtx = document.getElementById('systemsKpiChart').getContext('2d');
+        const systemsKpiChart = new Chart(systemsKpiCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Cumplimiento de Mantenimiento', 'Disponibilidad de Sistemas (Uptime)'],
+                datasets: [{
+                    label: 'KPIs de Sistemas',
+                    data: [100, 99.5],
+                    backgroundColor: [palette.green1, palette.green3],
+                    hoverOffset: 4
+                }]
+            },
+            options: { ...commonOptions }
+        });
+
+        // KPI Chart 3: Apprentice Growth (Removed as per user request)
+        // No longer needed: const apprenticeKpiCtx = document.getElementById('apprenticeKpiChart').getContext('2d');
+        // No longer needed: const apprenticeKpiChart = new Chart(apprenticeKpiCtx, { ... });
+    </script>
+</body>
+</html>
